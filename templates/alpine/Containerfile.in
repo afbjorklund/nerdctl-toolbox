@@ -1,0 +1,8 @@
+FROM docker.io/library/alpine:latest
+RUN apk add bash
+
+RUN adduser -u $uid -h $home -s $shell -D $user
+VOLUME $home
+WORKDIR $home
+USER $user
+CMD ["$shell"]

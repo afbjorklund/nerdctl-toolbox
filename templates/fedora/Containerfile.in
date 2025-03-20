@@ -1,0 +1,8 @@
+FROM docker.io/library/fedora:latest
+RUN dnf install -y procps psmisc && dnf clean all
+
+RUN groupadd -g $gid anders && useradd -u $uid -g $gid -d $home -s $shell -m -N $user
+VOLUME $home
+WORKDIR $home
+USER $user
+CMD ["$shell"]
