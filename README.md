@@ -4,6 +4,8 @@ pocket-protector, a.k.a. nerdctl-toolbox (or `nerdbox`)
 
 A tool, to avoid having to install software on the host.
 
+See <https://en.wikipedia.org/wiki/Pocket_protector>
+
 The image templates can be found in [templates](templates)
 
 The default `$DISTRO` is debian, but that can be changed.
