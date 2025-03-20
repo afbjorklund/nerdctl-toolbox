@@ -36,8 +36,10 @@ fi
 shift
 case $cmd in
   build)
-    uid=$uid gid=$gid user=$user home=$home shell=$shell envsubst < $distro/Containerfile.in >Containerfile
-    $NERDCTL build -t $image .
+    tmp=$(mktemp -d)
+    uid=$uid gid=$gid user=$user home=$home shell=$shell envsubst < $distro/Containerfile.in >$tmp/Containerfile
+    $NERDCTL build -t $image $tmp
+    rm -r $tmp
     ;;
   ls|list)
     $NERDCTL container ls --filter name=$TOOLBOX; echo
