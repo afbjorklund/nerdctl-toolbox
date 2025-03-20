@@ -8,6 +8,8 @@ The image templates can be found in [templates](templates)
 
 The default `$DISTRO` is debian, but that can be changed.
 
+Default name for `$TOOLBOX` is nerdbox, can be changed too.
+
 ## Usage
 
 To build the toolbox image, with the user added:
