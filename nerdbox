@@ -43,7 +43,7 @@ case $cmd in
     $NERDCTL build -t $image .
     ;;
   ls|list)
-    $NERDCTL container ls --filter name=$TOOLBOX; echo
+    $NERDCTL container ls --all --filter name=$TOOLBOX; echo
     $NERDCTL images $image; echo
     ;;
   create)
