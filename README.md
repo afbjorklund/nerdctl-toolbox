@@ -48,6 +48,14 @@ To run an oneshot command in an ephemeral container:
 
 `nerdbox run`
 
+## Decoration
+
+Decorate the shell prompt with an appropriate emoji:
+
+```
+user@nerdbox:~$ PS1=$(printf "\xf0\x9f\xa4\x93 %s " $PS1)
+```
+
 ## Theme Tune
 
 Definitely [NERDS: A Manifesto](https://youtu.be/6v9-Cp1Lkw4) by A Capella Science
