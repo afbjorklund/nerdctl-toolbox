@@ -14,6 +14,10 @@ Default name for `$TOOLBOX` is nerdbox, can be changed too.
 
 ## Usage
 
+To create the Containerfile for the distribution:
+
+`nerdbox setup`
+
 To build the toolbox image, with the user added:
 
 `nerdbox build`

@@ -30,13 +30,16 @@ volumes="-v $TOOLBOX:$home -v /tmp/lima:/tmp/lima"
 
 cmd=$1
 if [ -z $cmd ]; then
-  echo "Usage: $(basename $0) build | create | list | remove | run | shell"
+  echo "Usage: $(basename $0) build | create | list | remove | run | setup | shell"
   exit 1
 fi
 shift
 case $cmd in
+  setup)
+    uid=$uid gid=$gid user=$user home=$home shell=$shell envsubst <$distro/Containerfile.in >Containerfile
+    cp $distro/ufetch.sh .
+    ;;
   build)
-    uid=$uid gid=$gid user=$user home=$home shell=$shell envsubst < $distro/Containerfile.in >Containerfile
     $NERDCTL build -t $image .
     ;;
   ls|list)
