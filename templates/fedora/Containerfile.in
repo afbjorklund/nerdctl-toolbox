@@ -1,5 +1,6 @@
 FROM docker.io/library/fedora:latest
 RUN dnf install -y procps psmisc && dnf clean all
+ADD ufetch.sh /usr/local/bin/ufetch
 
 RUN groupadd -g $gid anders && useradd -u $uid -g $gid -d $home -s $shell -m -N $user
 VOLUME $home

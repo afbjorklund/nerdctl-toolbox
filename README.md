@@ -48,6 +48,23 @@ To run an oneshot command in an ephemeral container:
 
 `nerdbox run`
 
+## System Info
+
+To show some basic information about the system:
+
+```
+anders@nerdbox:~$ ufetch
+
+     ,---._   anders@nerdbox
+   /`  __  \  OS:        Debian 12.10
+  |   /    |  KERNEL:    Linux 6.11.0-14-generic
+  |   `.__.`  UPTIME:    1 minute
+   \          PACKAGES:  93
+    `-,_      SHELL:     bash
+              UI:        unknown
+
+```
+
 ## Decoration
 
 Decorate the shell prompt with an appropriate emoji:

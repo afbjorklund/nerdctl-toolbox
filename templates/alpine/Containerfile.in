@@ -1,5 +1,6 @@
 FROM docker.io/library/alpine:latest
 RUN apk add bash gcompat
+ADD ufetch.sh /usr/local/bin/ufetch
 
 RUN adduser -u $uid -h $home -s $shell -D $user
 VOLUME $home
