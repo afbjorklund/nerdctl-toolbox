@@ -1,5 +1,6 @@
 FROM docker.io/library/ubuntu:latest
-RUN userdel --remove ubuntu
+RUN apt-get update && apt-get install -y procps psmisc && rm -rf /var/lib/apt/lists/* \
+&& userdel --remove ubuntu
 
 RUN groupadd -g $gid anders && useradd -u $uid -g $gid -d $home -s $shell -m -N $user \
 && rm -f /etc/.pwd.lock
