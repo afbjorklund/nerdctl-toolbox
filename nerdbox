@@ -30,7 +30,7 @@ volumes="-v $TOOLBOX:$home -v /tmp/lima:/tmp/lima"
 
 cmd=$1
 if [ -z $cmd ]; then
-  echo "Usage: $(basename $0) build | create | list | remove | run | setup | shell"
+  echo "Usage: $(basename $0) build | create | list | remove | root | run | setup | shell"
   exit 1
 fi
 shift
@@ -52,6 +52,9 @@ case $cmd in
     ;;
   enter|shell)
     $NERDCTL exec -u $uid:$gid -e TERM -e COLORTERM -it $TOOLBOX "${@:-$shell}"
+    ;;
+  root|sudo)
+    $NERDCTL exec -u 0:0 -w /root -e TERM -e COLORTERM -it $TOOLBOX "${@:-$shell}"
     ;;
   rm|remove)
     $NERDCTL stop $TOOLBOX >/dev/null

@@ -36,6 +36,10 @@ To enter a login shell environment in the toolbox:
 
 `nerdbox shell`
 
+To enter a root shell environment in the toolbox:
+
+`nerdbox root`
+
 To remove the toolbox container but not the volume:
 
 `nerdbox remove`
