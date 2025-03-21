@@ -10,7 +10,7 @@ The image templates can be found in [templates](templates)
 
 The default `$DISTRO` is debian, but that can be changed.
 
-Default name for `$TOOLBOX` is nerdbox, can be changed too.
+Default name for `$TOOLBOX` is nerdbox, can be changed.
 
 ## Requirements
 
@@ -36,11 +36,11 @@ To enter a login shell environment in the toolbox:
 
 `nerdbox shell`
 
-To remove the toolbox container but not volume:
+To remove the toolbox container but not the volume:
 
 `nerdbox remove`
 
-To list existing toolbox images and containers:
+To list the existing toolbox images and containers:
 
 `nerdbox list`
 
@@ -48,6 +48,8 @@ To run an oneshot command in an ephemeral container:
 
 `nerdbox run`
 
-## Theme
+## Theme Tune
 
-[NERDS: A Manifesto](https://youtu.be/6v9-Cp1Lkw4)
+Definitely [NERDS: A Manifesto](https://youtu.be/6v9-Cp1Lkw4) by A Capella Science
+
+"KNEEL BEFORE THE MIGHTY POCKET PROTECTOR"
