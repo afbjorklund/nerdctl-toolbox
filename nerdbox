@@ -30,7 +30,7 @@ volumes="-v $TOOLBOX:$home -v /tmp/lima:/tmp/lima"
 
 cmd=$1
 if [ -z $cmd ]; then
-  echo "Usage: $(basename $0) build | create | list | remove | root | run | setup | shell"
+  echo "Usage: $(basename $0) build | create | list | remove | root | rsync | run | setup | shell"
   exit 1
 fi
 shift
@@ -59,6 +59,9 @@ case $cmd in
   rm|remove)
     $NERDCTL stop $TOOLBOX >/dev/null
     $NERDCTL rm $TOOLBOX 
+    ;;
+  rsync)
+    rsync --rsh="$NERDCTL exec -i" --info=progress2 "$@"
     ;;
   run)
     $NERDCTL run $volumes --rm -u $uid:$gid -it $image "${@:-$shell}"

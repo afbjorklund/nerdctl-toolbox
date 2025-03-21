@@ -48,6 +48,10 @@ To list the existing toolbox images and containers:
 
 `nerdbox list`
 
+To copy many files at once, with rsync and not tar:
+
+`nerdbox rsync`
+
 To run an oneshot command in an ephemeral container:
 
 `nerdbox run`
