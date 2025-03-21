@@ -58,7 +58,7 @@ case $cmd in
     $NERDCTL rm $TOOLBOX 
     ;;
   run)
-    $NERDCTL run $volumes --rm -u $uid:$gid -e TERM -e COLORTERM -it $image "${@:-$shell}"
+    $NERDCTL run $volumes --rm -u $uid:$gid -it $image "${@:-$shell}"
     ;;
   *)
     echo "Unknown command: $cmd" >&2
