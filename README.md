@@ -12,6 +12,12 @@ The default `$DISTRO` is debian, but that can be changed.
 
 Default name for `$TOOLBOX` is nerdbox, can be changed too.
 
+## Requirements
+
+`nerdctl` (macOS: brew install `lima`)
+
+`envsubst` (macOS: brew install `gettext`)
+
 ## Usage
 
 To create the Containerfile for the distribution:
