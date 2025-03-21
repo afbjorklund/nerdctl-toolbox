@@ -22,7 +22,7 @@ distro=$(dirname $0)/templates/$DISTRO
 image=localhost/$DISTRO-$TOOLBOX-$USER
 
 uid=$(id -u)
-gid=$(id -g)
+gid=$(id -g | sed -e 's/20/1000/') # dialout group
 user=$USER
 home=/home/$USER.linux
 shell=/bin/bash
