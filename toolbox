@@ -16,7 +16,7 @@
 #   limitations under the License.
 
 NERDCTL=${NERDCTL:-nerdctl}
-TOOLBOX=${TOOLBOX:-nerdbox}
+TOOLBOX=${TOOLBOX:-toolbox}
 DISTRO=${DISTRO:-debian}
 distro=$(dirname $0)/templates/$DISTRO
 image=localhost/$DISTRO-$TOOLBOX-$USER

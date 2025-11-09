@@ -1,15 +1,17 @@
 
 prefix = /usr/local
 
+TOOLBOX ?= toolbox
+
 all:
 
-.nerdbox: nerdbox
-	sed -e 's|$$(dirname $$0)|$(prefix)/share/nerdbox|' \
-	<nerdbox >.nerdbox && chmod +x .nerdbox
+.$(TOOLBOX): $(TOOLBOX)
+	sed -e 's|$$(dirname $$0)|$(prefix)/share/$(TOOLBOX)|' \
+	<$< >$@ && chmod +x $@
 
-install: .nerdbox
+install: .$(TOOLBOX)
 	mkdir -p $(DESTDIR)$(prefix)/bin
-	install .nerdbox $(DESTDIR)$(prefix)/bin/nerdbox
-	@rm .nerdbox
-	mkdir -p $(DESTDIR)$(prefix)/share/nerdbox
-	cp -pR templates $(DESTDIR)$(prefix)/share/nerdbox
+	install .$(TOOLBOX) $(DESTDIR)$(prefix)/bin/$(TOOLBOX)
+	@rm .$(TOOLBOX)
+	mkdir -p $(DESTDIR)$(prefix)/share/$(TOOLBOX)
+	cp -pR templates $(DESTDIR)$(prefix)/share/$(TOOLBOX)
