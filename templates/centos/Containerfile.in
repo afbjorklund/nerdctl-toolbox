@@ -2,7 +2,7 @@ FROM quay.io/centos/centos:latest
 RUN dnf install -y procps psmisc && dnf clean all
 ADD ufetch.sh /usr/local/bin/ufetch
 
-RUN groupadd -g $gid $user && useradd -u $uid -g $gid -d $home -s $shell -m -N $user
+RUN groupadd -g $gid $group && useradd -u $uid -g $gid -d $home -s $shell -m -N $user
 VOLUME $home
 WORKDIR $home
 USER $user

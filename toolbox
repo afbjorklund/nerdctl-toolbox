@@ -24,6 +24,7 @@ image=localhost/$DISTRO-$TOOLBOX-$USER
 uid=$(id -u)
 gid=$(id -g | sed -e 's/20/1000/') # dialout group
 user=$USER
+group=$USER
 home=/home/$USER.linux
 shell=/bin/bash
 volumes="-v $TOOLBOX:$home -v /tmp/lima:/tmp/lima"
@@ -36,7 +37,7 @@ fi
 shift
 case $cmd in
   setup)
-    uid=$uid gid=$gid user=$user home=$home shell=$shell envsubst <$distro/Containerfile.in >Containerfile
+    uid=$uid gid=$gid user=$user group=$group home=$home shell=$shell envsubst <$distro/Containerfile.in >Containerfile
     cp $distro/ufetch.sh .
     ;;
   build)
