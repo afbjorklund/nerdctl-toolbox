@@ -1,0 +1,41 @@
+.TH POCKET-PROTECTOR 1
+.SH NAME
+pocket-protector, a.k.a. the nerd's toolbox
+.SH SYNOPSIS
+.B toolbox
+[\fIcommand\fR]
+.SH DESCRIPTION
+A tool, to avoid having to install software on the host.
+.SS "Commands:"
+.TP
+.BR build
+Build the toolbox image, with the user added
+.TP
+.BR create
+Create the toolbox container and the volume
+.TP
+.BR list
+List the existing toolbox images and containers
+.TP
+.BR remove
+Remove the toolbox container but not the volume
+.TP
+.BR root
+Enter a root shell environment in the toolbox
+.TP
+.BR rsync
+Copy many files at once, with rsync and not tar
+.TP
+.BR run
+Run an oneshot command in an ephemeral container
+.TP
+.BR setup
+Create the Containerfile for the distribution
+.TP
+.BR shell
+Enter a login shell environment in the toolbox
+.SS "Variables:"
+.PP
+The default $DISTRO is debian, but that can be changed.
+.PP
+Default name for $TOOLBOX is toolbox, it can be changed.
